@@ -14,6 +14,9 @@ import os
 os.system("cls")
 
 class Board():
+    '''
+    This is the board to display
+    '''
     def __init__(self):
         self.cells = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
 
