@@ -31,45 +31,51 @@ class Board():
         if self.cells[cell_number] == " ":
             self.cells[cell_number] = player
 
+
             
-board = Board()
-'''
-This is another change I am making as test.
-'''
+def main():
+    board = Board()
+    '''
+    This is another change I am making as test.
+    '''
 
-def print_header():
-    print("Welcome to Tic-Tac-Toe\n")
+    def print_header():
+        print("Welcome to Tic-Tac-Toe\n")
 
-def refresh_screen():
-    # clear the screen
-    os.system("cls")
+    def refresh_screen():
+        # clear the screen
+        os.system("cls")
 
-    # print the header
-    print_header()
+        # print the header
+        print_header()
 
-    # show the board
-    board.display()
+        # show the board
+        board.display()
 
+
+    while True:
+        refresh_screen()
+
+        # get X input
+        x_choice = int(input("\nX ) Please choose 1 - 9 : "))
+
+        # update board
+        board.update_cell(x_choice, "X")
+
+        # refresh screen
+        refresh_screen()
+
+        # get O input
+        o_choice = int(input("\nO ) Please choose 1 - 9 : "))
+
+        # update board
+        board.update_cell(o_choice, "O")
+
+
+    '''
+    another change made from online
+    '''
     
-while True:
-    refresh_screen()
-
-    # get X input
-    x_choice = int(input("\nX ) Please choose 1 - 9 : "))
-
-    # update board
-    board.update_cell(x_choice, "X")
-
-    # refresh screen
-    refresh_screen()
-
-    # get O input
-    o_choice = int(input("\nO ) Please choose 1 - 9 : "))
-
-    # update board
-    board.update_cell(o_choice, "O")
-
-
-'''
-another change made from online
-'''
+    
+if __name__ == "__main__":
+    main()
